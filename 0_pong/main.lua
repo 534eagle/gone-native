@@ -43,8 +43,8 @@ function  love.draw()
         by one 8-bit byte. The maximum number of colors that can be displayed at
         any one time is 256 or 2pow8.
     ]]
-    love.graphics.setBackgroundColor(0,0,0,255)
-    love.graphics.setColor(255,255,255,255) -- white-solid-alpha
+    love.graphics.setBackgroundColor(0,0,0,255) -- black BG solid-alpha
+    love.graphics.setColor(255,255,255,255) -- white solid-alpha
     -- draw white test rectangle at center
     love.graphics.rectangle('fill', GAME_WIDTH / 2 -20, GAME_HEIGHT / 2 -20 , 40, 40)
 
