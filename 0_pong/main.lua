@@ -1,6 +1,4 @@
---[[
-:GD50-pong
-]]
+--[[ :GD50-pong ]]
 
 -- dependencies {LIBS as submodules in git repo}
 -- VIRTUAL-WINDOW
@@ -22,7 +20,7 @@ function love.load()
     {fullscreen = false, vsync = true, resizable = true})
 end
 
---[[ resize callback]]
+--[[ resize callback ]]
 function love.resize(w, h)
     push:resize(w,h)
 end
@@ -38,7 +36,7 @@ end
 function  love.draw()
     push:start()
     -- 1-bit game in 8-bit graphics-engine
-    -- {0/255, 0/255, 0/255, 255/255} RGBA foreground:background:alpha
+    -- {0/255, 0/255, 0/255, 255/255} RGB-triplet:background/foreground &alpha ie RGBA
     --[[
         8-bit color graphics are a method of storing image information in a
         computer's memory or in an image file, so that each pixel is represented
