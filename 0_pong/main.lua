@@ -8,11 +8,21 @@ local push = require('push')
 
 
 -- global variables
-WINDOW_WIDTH = 1024
+-- window screen size 720p aspect ratio 16:9 framerate 60 {720p60}
+--[[
+    The number 720 stands for the 720 horizontal scan lines of image display resolution
+    (also known as 720 pixels of vertical resolution).
+    The p stands for progressive scan, i.e. non-interlaced. When broadcast at 60.00 frames/s,
+    720p features the highest temporal resolution possible under the ATSC and DVB standards.
+    The term assumes a widescreen aspect ratio of 16:9, thus implying a resolution of 1280×720 px
+    (0.9 megapixels).
+]]
+WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
-
-GAME_WIDTH = 512
+-- game width/height {virtual width/height [1/2]}
+GAME_WIDTH = 640
 GAME_HEIGHT = 360
+
 
 --[[ load ]]
 function love.load()
