@@ -26,7 +26,7 @@ GAME_HEIGHT = 360
 
 BALL_SIZE = 4
 -- BALL_POS = {x = 0,  y = 0}
-BALL_POS = {x = GAME_HEIGHT / 2 -2, y = GAME_WIDTH / 2 -2} -- at center
+BALL_POS = {x = GAME_WIDTH / 2 -2, y = GAME_HEIGHT / 2 -2} -- at center
 
 -- global game states
 -- 'start', 'serve', 'play', 'over'
@@ -62,12 +62,12 @@ end
 
 --[[ keyboard callback]]
 function love.keypressed(key)
-    --quit
+    -- quit
     if key == 'escape' then
         love.event.quit()
     end
     -- game state change 'start' -> 'serve'
-    if key == 'enter' or key =='return'  and GAME_STATE == 'start' then
+    if key == 'enter' or key =='return' and GAME_STATE == 'start' then
         GAME_STATE = 'serve'
     end
 end
