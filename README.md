@@ -1,1 +1,3 @@
-:gone-native {my GD-50 coursework} :dated {winter-2020}
+:gone-native {my GD50 coursework}
+:dated {winter-2020}
+
