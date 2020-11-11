@@ -1,4 +1,11 @@
---[[ :GD50-pong ]]
+-- 0_pong
+
+-- Copyright (c) 2020 Benedict Pereira
+-- Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+-- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
 
 -- dependencies {LIBS as submodules in git repo}
 -- VIRTUAL-WINDOW
@@ -44,7 +51,7 @@ function love.load()
         Nearest-neighbor interpolation is the simplest and crudest filtering method 
         — it simply uses the color of the texel closest to the pixel center for the pixel color.
         While simple, this results in a large number of artifacts - texture 'blockiness' during
-        magnification,[3] and aliasing and shimmering during minification.
+        magnification, aliasing and shimmering during minification.
     ]]
     love.graphics.setDefaultFilter('nearest', 'nearest')
     -- window id
@@ -60,14 +67,14 @@ function love.resize(w, h)
     push:resize(w,h)
 end
 
---[[ keyboard callback]]
+--[[ keyboard callback ]]
 function love.keypressed(key)
     -- quit
     if key == 'escape' then
         love.event.quit()
     end
     -- game state change 'start' -> 'serve'
-    if key == 'enter' or key =='return' and GAME_STATE == 'start' then
+    if key == 'enter' or key == 'return' and GAME_STATE == 'start' then
         GAME_STATE = 'serve'
     end
 end
