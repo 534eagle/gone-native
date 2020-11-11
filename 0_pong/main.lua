@@ -5,7 +5,18 @@
 -- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
+--[[
+    In computer programming, boilerplate code or just boilerplate are sections of code 
+    that have to be included in many places with little or no alteration.
+    When using languages that are considered verbose, the programmer must write a lot of code
+    to accomplish only minor functionality. Such code is called boilerplate.[1]
+    
+    The need for boilerplate can be reduced through high-level mechanisms such as metaprogramming
+    (which has the computer automatically write the needed boilerplate code or insert it at compile time),
+    convention over configuration (which provides good default values, reducing the need to specify program
+    details in every project) and model-driven engineering (which uses models and model-to-code generators,
+    eliminating the need for manual boilerplate code).
+]]
 
 -- dependencies {LIBS as submodules in git repo}
 -- VIRTUAL-WINDOW
