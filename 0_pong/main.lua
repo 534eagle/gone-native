@@ -17,6 +17,7 @@ local push = require('push')
     The term assumes a widescreen aspect ratio of 16:9, thus implying a resolution of 1280×720 px
     (0.9 megapixels).
 ]]
+
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
 -- game width/height {virtual width/height [1/2]}
@@ -24,10 +25,32 @@ GAME_WIDTH = 640
 GAME_HEIGHT = 360
 
 
+
+-- global game states
+-- 'start', 'serve', 'play', 'over'
+GAME_STATE = 'start'
+
+
 --[[ load ]]
 function love.load()
+    -- push library scales game to screen dimension. 
     push:setupScreen(GAME_WIDTH, GAME_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT,
     {fullscreen = false, vsync = true, resizable = true})
+    
+    -- texture filter { aliased blocky pixel art }
+    --[[
+        Nearest-neighbor interpolation is the simplest and crudest filtering method 
+        — it simply uses the color of the texel closest to the pixel center for the pixel color.
+        While simple, this results in a large number of artifacts - texture 'blockiness' during
+        magnification,[3] and aliasing and shimmering during minification.
+    ]]
+    love.graphics.setDefaultFilter('nearest', 'nearest')
+    -- window id
+    love.window.setTitle('0_pong')
+    -- load fonts
+    SML_FONT = love.graphics.newFont('font.ttf', 16)
+    MID_FONT = love.graphics.newFont('font.ttf', 32)
+    LRG_FONT = love.graphics.newFont('font.ttf', 64)
 end
 
 --[[ resize callback ]]
@@ -56,7 +79,17 @@ function  love.draw()
     love.graphics.setBackgroundColor(0,0,0,255) -- black BG solid-alpha
     love.graphics.setColor(255,255,255,255) -- white solid-alpha
     -- draw white test rectangle at center
-    love.graphics.rectangle('fill', GAME_WIDTH / 2 -20, GAME_HEIGHT / 2 -20 , 40, 40)
+    --love.graphics.rectangle('fill', GAME_WIDTH / 2 -20, GAME_HEIGHT / 2 -20 , 40, 40)
+
+    --[[ game state 'start']]
+    if GAME_STATE == 'start' then
+        love.graphics.setFont(SML_FONT)
+        love.graphics.print('0_pong', GAME_WIDTH / 2 -20, 20)
+        -- press enter to start
+        love.graphics.setFont(MID_FONT)
+        love.graphics.print('Press enter to start game.', GAME_WIDTH / 2 -230, GAME_HEIGHT / 2 -32)
+    end
+
 
     push:finish()
 end
