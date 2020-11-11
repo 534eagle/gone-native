@@ -24,7 +24,9 @@ WINDOW_HEIGHT = 720
 GAME_WIDTH = 640
 GAME_HEIGHT = 360
 
-
+BALL_SIZE = 4
+-- BALL_POS = {x = 0,  y = 0}
+BALL_POS = {x = GAME_HEIGHT / 2 -2, y = GAME_WIDTH / 2 -2} -- at center
 
 -- global game states
 -- 'start', 'serve', 'play', 'over'
@@ -58,6 +60,19 @@ function love.resize(w, h)
     push:resize(w,h)
 end
 
+--[[ keyboard callback]]
+function love.keypressed(key)
+    --quit
+    if key == 'escape' then
+        love.event.quit()
+    end
+    -- game state change 'start' -> 'serve'
+    if key == 'enter' or key =='return'  and GAME_STATE == 'start' then
+        GAME_STATE = 'serve'
+    end
+end
+
+
 --[[ update ]]
 function love.update()
 
@@ -90,6 +105,14 @@ function  love.draw()
         love.graphics.print('Press enter to start game.', GAME_WIDTH / 2 -230, GAME_HEIGHT / 2 -32)
     end
 
+    --[[ game state 'serve']]
+    if GAME_STATE == 'serve' then
+        -- draw paddles and ball
+        --[[ todo: draw paddles]]
+
+        -- draw ball
+        love.graphics.rectangle('fill', BALL_POS.x, BALL_POS.y, BALL_SIZE, BALL_SIZE)
+    end
 
     push:finish()
 end
